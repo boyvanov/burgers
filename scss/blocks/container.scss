@@ -1,0 +1,13 @@
+.container {
+  width: 940px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.container--welcome {
+  justify-content: space-between;
+}
+

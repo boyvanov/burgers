@@ -1,0 +1,18 @@
+.we-best {
+  @include bgcover();
+  background-image: url(../img/bg/bg_we.png);
+}
+
+.we-best__list {
+  display: flex;
+  margin-top: rem(35px);
+}
+
+.we-best__item {
+  flex: 1;
+  margin-right: rem(15px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

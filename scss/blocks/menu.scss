@@ -1,0 +1,25 @@
+.menu__list {
+  display: flex;
+}
+
+.menu__item{
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: '';
+    display: block;
+    @include circle(rem(4px), $white);
+    margin: 0 rem(15px);
+  }
+    &:first-child:before {
+    display: none;
+  }
+}
+
+.menu__link {
+  @include ubuntu(500);
+  font-size: rem(13px);
+  text-transform: uppercase;
+  color: $white;  
+}

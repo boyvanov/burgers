@@ -1,0 +1,48 @@
+.slider {
+  position: fixed;
+  top: rem(96px);
+  right: rem(55px);
+}
+
+.slider__item {
+  margin-bottom: rem(5px);
+}
+
+.slider__link {
+  display: block;
+  width: rem(16px);
+  height: rem(16px);
+  position: relative;
+  
+  &:before, &:after {
+    content: '';
+    display: block;
+    @include centered();
+  }
+
+  &:before {
+    @include circle(rem(6px), $white);
+  }
+
+  &:after {
+    width: rem(16px);
+    height: rem(16px);
+    border: rem(1px) solid $white;
+    border-radius: 50%;
+    opacity: 0;
+    transition: .3s;
+  }
+
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.slider__item--active {
+  .slider__link:after {
+    opacity: 1;
+  }
+}
+

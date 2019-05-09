@@ -1,0 +1,29 @@
+.btn {
+  display: inline-block;
+  @include ubuntu(500);
+  font-size: rem(13px);
+  text-transform: uppercase;
+  color: $white;
+  padding: rem(10px) rem(15px);
+  background-color: $orange;
+  border-radius: rem(5px);
+
+  &--header {
+    margin-left: rem(15px);
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: #c1401e;
+    }
+  }
+
+  &--review {
+    margin-top: rem(15px);
+    background-color: $dark-grey;
+    transition: background-color .3s;
+    
+    &:hover {
+      background-color: #1f2122;
+    }
+  }
+}
