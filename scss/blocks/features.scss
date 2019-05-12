@@ -11,14 +11,13 @@
 .features__title {
   @include lifehack();
   font-size: rem(24px);
+  color: $dark-grey;
   letter-spacing: rem(-0.6px);
   line-height: 1.17;
   margin-top: rem(30px);
 }
 
 .features__text {
-  @include ubuntu();
-  font-size: rem(14px);
   line-height: 1.71;
   color: $dark-grey08;
   margin-top: rem(15px);

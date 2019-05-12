@@ -25,15 +25,10 @@
 
 .review__title {
   @include gagalin();
-  font-size: rem(14px);
-  color: $white;
 }
 
 .review__text {
-  @include ubuntu();
-  font-size: rem(14px);
   line-height: 1.71;
-  color: $white;
   margin-top: rem(15px);
 }
 

@@ -1,0 +1,42 @@
+.team {
+  background: url(../img/bg/bg_team.png) center top / cover no-repeat;
+  position: relative;
+}
+
+.team__desc {
+  padding-left: 18%;
+  padding-top: 16%;
+}
+
+.team__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background-color: rgba(#393b3c, .93);
+}
+
+.team__accordeon {
+  margin-top: rem(40px);
+}
+
+.team__accordeon-item {
+  margin-bottom: rem(35px);
+}
+
+.team__accordeon-item--active {
+  & .person__block {
+    height: 100%;
+  }
+
+  & .person__name {
+    color: $yellow;
+
+    &:before {
+      border-bottom: rem(7px) solid $yellow;
+      border-top: none;
+    }
+  }
+}
+
