@@ -21,14 +21,12 @@
 .contacts__phone {
   font-weight: bold;
   color: $orange;
-  display: inline-flex;
+  display: flex;
   align-items: center;
+}
 
-  &:before {
-    content: '';
-    width: rem(12px);
-    height: rem(11px);
-    background-image: url(../img/icons/phone.png);
-    margin-right: rem(5px);
-  }
+.contacts__phone-icon {
+  width: rem(12px);
+  height: rem(11px);
+  margin-right: rem(5px)
 }

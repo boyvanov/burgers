@@ -16,7 +16,9 @@
       <div class="container container--welcome">
         <header class="header">
           <div class="logo">
-            <img src="./img/logo/logo.png" alt="logo" class="logo__pic">
+            <svg class="logo__icon">
+              <use xlink:href="./img/sprite.svg#logo"></use>
+            </svg>
           </div>
           <div class="header__menu">
             <nav class="nav">
@@ -56,7 +58,11 @@
             <h2 class="welcome__desc">натуральные бургеры</h2>
           </div>
         </div>
-        <a href="#" class="arrow-scroll"></a>
+        <a href="#" class="arrow-scroll">
+          <svg class="arrow-scroll__icon">
+            <use xlink:href="./img/sprite.svg#arrow-scroll"></use>
+          </svg>
+        </a>
       </div>
     </section>
     <section class="section we-best">
@@ -65,7 +71,9 @@
         <ul class="we-best__list">
           <li class="we-best__item features">
             <div class="features__pic">
-              <img src="./img/icons/meat.png" alt="meat" class="features__pic-img">
+              <svg class="features__pic-icon features__pic-icon--meat">
+                  <use xlink:href="./img/sprite.svg#meat"></use>
+              </svg>
             </div>
             <div class="features__desc">
               <h4 class="features__title">100% свежее мясо</h4>
@@ -79,7 +87,9 @@
           </li>
           <li class="we-best__item features">
             <div class="features__pic">
-              <img src="./img/icons/hand.png" alt="hand" class="features__pic-img">
+              <svg class="features__pic-icon features__pic-icon--hand">
+                  <use xlink:href="./img/sprite.svg#hand"></use>
+              </svg>
             </div>
             <div class="features__desc">
               <h4 class="features__title">Ручная сборка</h4>
@@ -94,7 +104,9 @@
           </li>
           <li class="we-best__item features">
             <div class="features__pic">
-              <img src="./img/icons/natural.png" alt="leaves" class="features__pic-img">
+              <svg class="features__pic-icon features__pic-icon--natural">
+                  <use xlink:href="./img/sprite.svg#natural"></use>
+              </svg>
             </div>
             <div class="features__desc">
               <h4 class="features__title">Натуральные ингредиенты</h4>
@@ -450,24 +462,44 @@
             <div class="contacts__address">
                 Санкт-Петербург, ул.Бабушкина, д.12/1, 15
             </div>
+            
             <a href="tel:+78123771377" class="contacts__phone">
-                +7 (812) 377-13-77
+              <svg class="contacts__phone-icon">
+                  <use xlink:href="./img/sprite.svg#phone"></use>
+              </svg>
+              <span class="contacts__phone-numbers">+7 (812) 377-13-77</span>
             </a>
           </div>
         </div>
         <div class="footer__right">
           <ul class="socials">
             <li class="socials__item">
-              <a href="#" class="socials__link socials__link--vk"></a>
+              <a href="#" class="socials__link">
+                <svg class="socials__link-icon socials__link-icon--vk">
+                    <use xlink:href="./img/sprite.svg#vk"></use>
+                </svg>
+              </a>
             </li>
             <li class="socials__item">
-              <a href="#" class="socials__link socials__link--fb"></a>
+              <a href="#" class="socials__link">
+                <svg class="socials__link-icon socials__link-icon--fb">
+                    <use xlink:href="./img/sprite.svg#fb"></use>
+                </svg>
+              </a>
             </li>
             <li class="socials__item">
-              <a href="#" class="socials__link socials__link--inst"></a>
+              <a href="#" class="socials__link">
+                <svg class="socials__link-icon socials__link-icon--inst">
+                    <use xlink:href="./img/sprite.svg#inst"></use>
+                </svg>
+              </a>
             </li>
             <li class="socials__item">
-              <a href="#" class="socials__link socials__link--tw"></a>
+              <a href="#" class="socials__link">
+                <svg class="socials__link-icon socials__link-icon--twitter">
+                    <use xlink:href="./img/sprite.svg#twitter"></use>
+                </svg>
+              </a>
             </li>
           </ul>
         </div>
