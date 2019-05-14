@@ -1,0 +1,22 @@
+.section-title {
+  @include gagalin();
+  font-size: rem(72px);
+  line-height: 1.31;
+  color: $yellow;
+
+  &--grey {
+    color: $dark-grey;
+  }
+
+  &--white {
+    color: $white;
+  }
+
+  &--centered {
+    text-align: center;
+  }
+}
+
+ 
+
+

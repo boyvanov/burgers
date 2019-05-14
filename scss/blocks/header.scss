@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: rem(13px);
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+}

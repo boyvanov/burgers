@@ -1,0 +1,79 @@
+.menu {
+  @include bgcover();
+  background-image: url(../img/bg/bg_menu.png);
+  position: relative;
+}
+
+.menu__accordeon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;  
+  display: flex;
+}
+
+.menu__title {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+}
+
+.submenu {
+  display: flex;
+}
+
+.submenu__name {
+  @include bgcover();
+  width: rem(80px);
+  position: relative;
+}
+.submenu__name--meat {
+  background-image: url(../img/bg/bg_menu_item1.png);
+}
+
+.submenu__name--veg {
+  background-image: url(../img/bg/bg_menu_item2.png);
+}
+
+.submenu__name--diet {
+  background-image: url(../img/bg/bg_menu_item3.png);
+}
+
+.submenu__link {
+  display: flex;
+}
+
+.submenu__title {
+  font-size: rem(40px);
+  position: absolute;
+  white-space: nowrap;
+  bottom: 0;
+  left: 50%;
+  transform-origin: 0 0;
+  transform: rotate(-90deg) translateY(-50%);
+}
+
+.submenu__wrap {
+  width: 0;
+}
+
+.submenu__desc {
+  line-height: 2;
+  background-color: rgba(#383c3e, .93);
+  height: 100%;
+  overflow: hidden;
+  padding: 7% 6%;
+}
+
+.menu__accordeon-item--active {
+  & .submenu__title {
+    color: $yellow;
+  }
+
+  & .submenu__wrap {
+    width: rem(540px);
+  }
+}
+
+
+

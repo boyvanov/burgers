@@ -1,0 +1,100 @@
+// placeholder clearfix
+
+%clearfix {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+// return rem
+
+@function rem($px) {
+  @return $px / 16px * 1rem;
+}
+
+// style mixins
+
+@mixin vertical-gradient($top-color: #ffffff, $bottom-color: #000000) {
+	background-color: $top-color;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($top-color), to($bottom-color)); /* Chrome, Safari 4+ */
+	background-image: -webkit-linear-gradient(top, $top-color, $bottom-color); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+	background-image: -moz-linear-gradient(top, $top-color, $bottom-color); /* Firefox 3.6-15 */
+	background-image: -o-linear-gradient(top, $top-color, $bottom-color); /* Opera 11.10-12.00 */
+	background-image: linear-gradient(to bottom, $top-color, $bottom-color); /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$top-color, EndColorStr=$bottom-color);
+}
+
+@mixin circle($width, $color) {
+  width: $width;
+  height: $width;
+  border-radius: 50%;
+  background-color: $color;
+}
+
+@mixin bgcover() {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// mixin position
+
+@mixin inlineblock($valign: center) {
+  display: inline-block;
+  vertical-align: $valign;
+}
+
+@mixin centered($axis: 'both') {
+  position: absolute;
+
+  @if ($axis == 'both') {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @if ($axis == 'x') {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if ($axis == 'y') {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if ($axis == 'max') {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  @if ($axis == 'fullx') {
+    left: 0;
+    right: 0;
+  }
+  @if ($axis == 'fully') {
+    top: 0;
+    bottom: 0;
+  }
+}
+
+// fonts mixins
+
+@mixin gagalin() {
+  font-family: gagalin, cursive;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin lifehack() {
+  font-family: lifehack, cursive;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin ubuntu($weight: 300) {
+  font-family: ubuntu, Arial, sans-serif;
+  font-weight: $weight;
+  font-style: normal;
+}
+

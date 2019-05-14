@@ -1,0 +1,28 @@
+.welcome {
+  @include bgcover();
+  background-image: url(../img/bg/bg_welcome.png);
+}
+
+.welcome__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 8%;
+}
+
+.welcome__content-pic {
+  margin-right: rem(11px);
+}
+
+.welcome__content-title {
+  width: 45%;
+  margin-top: rem(70px);
+}
+
+.welcome__desc {
+  @include lifehack();
+  font-size: rem(65px);
+  line-height: 0.92;
+  letter-spacing: rem(-1.62px);
+  margin-top: rem(15px);
+}

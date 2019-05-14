@@ -1,0 +1,35 @@
+.btn {
+  display: inline-block;
+  font-weight: 500;
+  font-size: rem(13px);
+  text-transform: uppercase;
+  color: $white;
+  padding: rem(10px) rem(15px);
+  background-color: $orange;
+  border-radius: rem(5px);
+  transition: background-color .3s;
+  
+  &:hover {
+    background-color: #c1401e;
+    }
+
+  &--header {
+    margin-left: rem(15px);
+    }
+
+  &--review {
+    margin-top: rem(15px);
+    background-color: $dark-grey;
+    
+    &:hover {
+      background-color: #1f2122;
+    }
+  }
+}
+
+.clear {
+  font-weight: 300;
+  color: $white;
+  padding: 0;
+  margin-left: rem(20px);
+}
