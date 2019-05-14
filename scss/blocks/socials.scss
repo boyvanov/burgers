@@ -12,9 +12,10 @@
 }
 
 .socials__link-icon {
-  opacity: .3;
+  fill-opacity: .3;
+  transition: fill-opacity .3s;
   &:hover {
-    opacity: 1;
+    fill-opacity: 1;
   }
 }
 

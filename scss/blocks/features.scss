@@ -1,7 +1,10 @@
 .features__pic {
-  min-height: rem(90px);
   display: flex;
   justify-content: center;
+}
+
+.features__pic-icon {
+  min-height: rem(90px);
 }
 
 .features__pic-icon--meat {
