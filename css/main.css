@@ -556,38 +556,46 @@ a {
   align-items: center; }
 
 .radio {
-  display: none; }
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
 
 .radio__visible {
-  width: 0.9375rem;
-  height: 0.9375rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   background-color: #fff;
   position: relative;
   margin-right: 0.625rem; }
   .radio__visible:before {
     content: "";
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
     position: absolute;
-    top: 0.25rem;
-    bottom: 0.25rem;
-    left: 0.25rem;
-    right: 0.25rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #e35028;
     border-radius: 50%;
     opacity: 0;
-    transform: scale(0); }
+    transition: opacity .3s; }
 
-.radio:checked ~ .radio__visible:before {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity .3s; }
+.radio:checked + .radio__visible:before {
+  opacity: 1; }
 
 .form__checkbox {
   display: flex;
   align-items: center; }
 
 .checkbox {
-  display: none; }
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
 
 .checkbox__visible {
   width: 1rem;
@@ -597,20 +605,19 @@ a {
   margin-right: 0.5625rem; }
   .checkbox__visible:before {
     content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 0.6875rem;
-    height: 0.5625rem;
-    background-image: url(../img/icons/checkbox.png);
+    background: url(../img/icons/checkbox.png) center center no-repeat;
     opacity: 0;
-    transform: scale(0); }
+    transition: opacity .3s; }
 
-.checkbox:checked ~ .checkbox__visible:before {
-  opacity: 1;
-  transform: scale(1) translate(-50%, -50%);
-  transition: opacity .3s; }
+.checkbox:checked + .checkbox__visible:before {
+  opacity: 1; }
 
 .map {
   background-position: center center;
