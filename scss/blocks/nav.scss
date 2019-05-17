@@ -1,5 +1,9 @@
 .nav__list {
   display: flex;
+
+  @include tablets {
+    display: none;
+  }
 }
 
 .nav__item{
@@ -10,7 +14,7 @@
     content: '';
     display: block;
     @include circle(rem(4px), $white);
-    margin: 0 rem(15px);
+    margin: 0 rem(10px);
   }
     &:first-child:before {
     display: none;
@@ -19,7 +23,7 @@
 
 .nav__link {
   font-weight: 500;
-  font-size: rem(13px);
+  font-size: rem(12px);
   text-transform: uppercase;
   color: $white;  
 }

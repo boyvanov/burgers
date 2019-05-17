@@ -5,6 +5,11 @@
 
 .features__pic-icon {
   min-height: rem(90px);
+
+  @include phones {
+    min-width: rem(100px);
+    }
+  
 }
 
 .features__pic-icon--meat {
@@ -24,6 +29,11 @@
 
 .features__desc {
   text-align: center;
+
+  @include phones {
+    text-align: left;
+    margin-left: rem(25px);
+  }
 }
 
 .features__title {

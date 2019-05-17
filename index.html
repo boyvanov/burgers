@@ -45,6 +45,9 @@
               </ul>
             </nav>
             <button class="btn btn--header" type="button">заказать</button>
+            <div class="hamburger__menu">
+              <div class="hamburger__menu-dash"></div>
+            </div>
           </div>
         </header>
         <div class="welcome__content">
@@ -406,34 +409,36 @@
                     <textarea name="" class="form__textarea form-field"></textarea>
                 </label>
               </div>
-              <div class="form__row">
-                  <div class="form__block-radio">
-                    <label class="form__radio">
-                        <input type="radio" class="radio" name="radio" checked/>
-                        <div class="radio__visible"></div>
-                        <div class="radio__text">Потребуется сдача</div>
-                    </label>
-                    <label class="form__radio">
-                        <input type="radio" class="radio" name="radio"/>
-                        <div class="radio__visible"></div>                
-                        <div class="radio__text">Оплата по карте</div>
-                    </label>
+              <div class="form__buttons">
+                <div class="form__row">
+                    <div class="form__block-radio">
+                      <label class="form__radio">
+                          <input type="radio" class="radio" name="radio" checked/>
+                          <div class="radio__visible"></div>
+                          <div class="radio__text">Потребуется сдача</div>
+                      </label>
+                      <label class="form__radio">
+                          <input type="radio" class="radio" name="radio"/>
+                          <div class="radio__visible"></div>                
+                          <div class="radio__text">Оплата по карте</div>
+                      </label>
+                    </div>
+                </div>
+                <div class="form__row">
+                  <div class="form__block-checkbox">
+                      <label class="form__checkbox">
+                          <input type="checkbox" class="checkbox" name="checkbox"/>
+                          <div class="checkbox__visible"></div>
+                          <div class="checkbox__text">Не перезванивать</div>
+                      </label>
                   </div>
-              </div>
-              <div class="form__row">
-                <div class="form__block-checkbox">
-                    <label class="form__checkbox">
-                        <input type="checkbox" class="checkbox" name="checkbox"/>
-                        <div class="checkbox__visible"></div>
-                        <div class="checkbox__text">Не перезванивать</div>
-                    </label>
+                </div>
+                <div class="form__row">
+                  <button class="btn" type="submit">Заказать</button>
+                  <button class="clear" type="reset">Очистить</button>
                 </div>
               </div>
-              <div class="form__row">
-                <button class="btn" type="submit">Заказать</button>
-                <button class="clear" type="reset">Очистить</button>
-              </div>
-            </div>
+            </di>
           </form>
         </div>
       </div>

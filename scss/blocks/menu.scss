@@ -18,6 +18,11 @@
   position: absolute;
   top: 15%;
   left: 10%;
+
+  @include tablets {
+    top: 8%;
+   left: 3%;
+  }
 }
 
 .submenu {
@@ -32,6 +37,14 @@
   // justify-content: center;
 
   position: relative;
+
+  @include tablets {
+  width: rem(60px);
+  }
+
+  @include phones {
+  width: rem(40px);
+  }
 }
 
 .submenu__link--meat {
@@ -63,7 +76,10 @@
 
   // writing-mode: tb-rl;
   // transform: rotate(180deg);
-  
+
+  @include phones {
+    font-size: rem(32px);
+    }
 }
 
 .submenu__wrap {
@@ -76,6 +92,10 @@
   height: 100%;
   overflow: hidden;
   padding: 7% 6%;
+
+  @include phones {
+    font-size: rem(12px);
+  }
 }
 
 .menu__accordeon-item--active {
@@ -84,7 +104,15 @@
   }
 
   & .submenu__wrap {
-    width: rem(540px);
+    width: rem(520px);
+
+    @include tablets {
+    width: rem(350px);
+    }
+
+    @include phones {
+    width: rem(255px);
+    }
   }
 }
 

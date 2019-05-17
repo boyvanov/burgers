@@ -6,11 +6,21 @@
 .we-best__list {
   display: flex;
   margin-top: rem(35px);
+
+  @include phones {
+    flex-direction: column;
+    }
 }
 
 .we-best__item {
   flex: 1;
   margin-right: rem(15px);
+  display: flex;
+  flex-direction: column;
+
+  @include phones {
+    flex-direction: row;
+    }
 
   &:last-child {
     margin-right: 0;

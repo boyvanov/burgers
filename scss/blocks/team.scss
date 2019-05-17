@@ -4,8 +4,13 @@
 }
 
 .team__desc {
-  padding-left: 18%;
-  padding-top: 16%;
+  padding: 15%;
+  
+
+  @include tablets {
+    padding: 10%;
+    text-align: center;
+  }
 }
 
 .team__content {
@@ -15,14 +20,32 @@
   bottom: 0;
   left: 50%;
   background-color: rgba(#393b3c, .93);
+
+  @include tablets {
+    left: 0;
+    display: flex;
+    justify-content: center
+
+  }
 }
 
 .team__accordeon {
   margin-top: rem(40px);
+  display: flex;
+  flex-direction: column;
+
+  @include tablets {
+    align-items: center;
+  }
 }
 
 .team__accordeon-item {
   margin-bottom: rem(35px);
+  width: 100%;
+
+  @include tablets {
+    width: 75%;
+  }
 }
 
 .team__accordeon-item--active {
