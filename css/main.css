@@ -46,6 +46,9 @@ html, body {
   padding: 0;
   margin: 0; }
 
+html {
+  font-size: 16px; }
+
 body {
   font-family: ubuntu, Arial, sans-serif;
   font-weight: 300;
@@ -58,7 +61,7 @@ body {
 
 .wrapper {
   width: 100%;
-  min-width: 58.75rem;
+  min-width: 0px;
   min-height: 100%;
   overflow: hidden;
   position: relative; }
@@ -99,7 +102,7 @@ a {
   text-decoration: none; }
 
 .container {
-  width: 940px;
+  max-width: 58.75rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -110,7 +113,8 @@ a {
   justify-content: space-between; }
 
 .container--footer {
-  flex-direction: row; }
+  flex-direction: row;
+  justify-content: space-between; }
 
 .points {
   position: fixed;
@@ -328,8 +332,8 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  height: 100%;
-  width: 50%;
+  bottom: 0;
+  left: 50%;
   background-color: rgba(57, 59, 60, 0.93); }
 
 .team__accordeon {
@@ -402,8 +406,10 @@ a {
   position: absolute;
   right: 0;
   top: 0;
-  height: 100%;
-  display: flex; }
+  bottom: 0;
+  display: flex;
+  z-index: 1;
+  max-width: 100%; }
 
 .menu__title {
   position: absolute;
@@ -413,33 +419,31 @@ a {
 .submenu {
   display: flex; }
 
-.submenu__name {
+.submenu__link {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   width: 5rem;
   position: relative; }
 
-.submenu__name--meat {
+.submenu__link--meat {
   background-image: url(../img/bg/bg_menu_item1.png); }
 
-.submenu__name--veg {
+.submenu__link--veg {
   background-image: url(../img/bg/bg_menu_item2.png); }
 
-.submenu__name--diet {
+.submenu__link--diet {
   background-image: url(../img/bg/bg_menu_item3.png); }
-
-.submenu__link {
-  display: flex; }
 
 .submenu__title {
   font-size: 2.5rem;
-  position: absolute;
   white-space: nowrap;
-  bottom: 0;
+  position: absolute;
+  top: 100%;
   left: 50%;
+  transform: rotate(-90deg) translateY(-50%);
   transform-origin: 0 0;
-  transform: rotate(-90deg) translateY(-50%); }
+  margin-top: -2.5rem; }
 
 .submenu__wrap {
   width: 0; }
@@ -633,8 +637,7 @@ a {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../img/bg/bg_footer.png);
-  display: flex; }
+  background-image: url(../img/bg/bg_footer.png); }
 
 .footer__left, .footer__right {
   flex: 1;

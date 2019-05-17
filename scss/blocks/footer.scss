@@ -5,8 +5,7 @@
   width: 100%;
   @include bgcover();
   background-image: url(../img/bg/bg_footer.png);
-  display: flex;
-}
+  }
 
 .footer__left, .footer__right {
   flex: 1;
