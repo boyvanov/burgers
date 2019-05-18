@@ -1,4 +1,10 @@
 .delivery {
   @include bgcover();
   background-image: url(../img/bg/bg_delivery.png);
+
+  & .section-title {
+    @include phones-small {
+      font-size: rem(45px);
+    }
+  }
 }

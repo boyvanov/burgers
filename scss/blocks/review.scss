@@ -24,11 +24,15 @@
 
   @include tablets {
     text-align: center;
-    padding: 2%;
+    padding: 8% 15%;
   }
 
   @include phones {
     padding: 20%;
+  }
+
+  @include phones-small {
+    padding: 13%;
   }
 }
 

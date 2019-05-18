@@ -8,23 +8,23 @@
 
   @include phones {
     min-width: rem(100px);
-    }
+  }
+
+  &--meat {
+    width: rem(97px);
+    height: rem(89px);
+  }
+
+  &--hand {
+    width: rem(73px);
+    height: rem(85px);
+  }
+
+  &--natural {
+    width: rem(88px);
+    height: rem(75px);
+  }
   
-}
-
-.features__pic-icon--meat {
-  width: rem(97px);
-  height: rem(89px);
-}
-
-.features__pic-icon--hand {
-  width: rem(73px);
-  height: rem(85px);
-}
-
-.features__pic-icon--natural {
-  width: rem(88px);
-  height: rem(75px);
 }
 
 .features__desc {
@@ -43,6 +43,10 @@
   letter-spacing: rem(-0.6px);
   line-height: 1.17;
   margin-top: rem(30px);
+
+  @include phones {
+    margin-top: 0;
+  }
 }
 
 .features__text {

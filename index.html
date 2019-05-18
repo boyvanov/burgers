@@ -370,35 +370,35 @@
               <div class="form__row">
                 <label class="form__block">
                   <div class="form__block-title">Имя</div>
-                  <input type="text" class="form__input form-field">
+                  <input type="text" name="name" class="form__input form-field">
                 </label>
                 <label class="form__block">
                   <div class="form__block-title">Телефон</div>
-                  <input type="text" class="form__input form-field">
+                  <input type="text" name="phone" class="form__input form-field">
                 </label>
               </div>
               <div class="form__row">
                 <label class="form__block">
                     <div class="form__block-title">Улица</div>
-                    <input type="text" class="form__input form-field">
+                    <input type="text" name="street" class="form__input form-field">
                 </label>
               </div>
               <div class="form__row">
                 <label class="form__block">
                     <div class="form__block-title">Дом</div>
-                    <input type="text" class="form__input form-field">
+                    <input type="text" name="home" class="form__input form-field">
                 </label>
                 <label class="form__block">
                     <div class="form__block-title">Корпус</div>
-                    <input type="text" class="form__input form-field">
+                    <input type="text" name="part" class="form__input form-field">
                 </label>
                 <label class="form__block">
                     <div class="form__block-title">Квартира</div>
-                    <input type="text" class="form__input form-field">
+                    <input type="text" name="appt" class="form__input form-field">
                 </label>
-                <label class="form__block">
+                <label class="form__block floor">
                     <div class="form__block-title">Этаж</div>
-                    <input type="text" class="form__input form-field">
+                    <input type="text" name="floor" class="form__input form-field">
                 </label>
               </div>
             </div>
@@ -406,19 +406,19 @@
               <div class="form__row">
                 <label class="form__block">
                     <div class="form__block-title">Комментарий</div>
-                    <textarea name="" class="form__textarea form-field"></textarea>
+                    <textarea name="comment" class="form__textarea form-field"></textarea>
                 </label>
               </div>
               <div class="form__buttons">
                 <div class="form__row">
                     <div class="form__block-radio">
                       <label class="form__radio">
-                          <input type="radio" class="radio" name="radio" checked/>
+                          <input type="radio" class="radio" name="payment" checked/>
                           <div class="radio__visible"></div>
                           <div class="radio__text">Потребуется сдача</div>
                       </label>
                       <label class="form__radio">
-                          <input type="radio" class="radio" name="radio"/>
+                          <input type="radio" class="radio" name="payment"/>
                           <div class="radio__visible"></div>                
                           <div class="radio__text">Оплата по карте</div>
                       </label>
@@ -427,7 +427,7 @@
                 <div class="form__row">
                   <div class="form__block-checkbox">
                       <label class="form__checkbox">
-                          <input type="checkbox" class="checkbox" name="checkbox"/>
+                          <input type="checkbox" class="checkbox" name="callback"/>
                           <div class="checkbox__visible"></div>
                           <div class="checkbox__text">Не перезванивать</div>
                       </label>

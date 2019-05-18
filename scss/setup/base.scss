@@ -17,11 +17,11 @@ html {
   font-size: 16px;
   
   @include tablets {
-  font-size: 14px;
+  font-size: 15px;
   }
 
   @include phones {
-  font-size: 13px;
+  font-size: 14px;
   }
 }
 

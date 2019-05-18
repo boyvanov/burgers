@@ -3,7 +3,7 @@
 
   @include tablets {
     flex-direction: column;
-    padding: 0 15%;
+    padding: 0 20%;
   }
 
   @include phones {
@@ -13,6 +13,14 @@
 
 .form__wrap {
   margin-top: rem(45px);
+
+  @include phones {
+    margin-top: rem(20px);
+  }
+
+  @include phones-small {
+    margin-top: 0;
+  }
 }
 
 .form__col {
@@ -39,6 +47,10 @@
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @include phones-small {
+    margin-bottom: rem(15px);
   }
 }
 
@@ -67,7 +79,7 @@
 
   &:focus {
     border: 2px solid $yellow;
-    }
+  }
 }
 
 .form__textarea {
@@ -196,3 +208,14 @@
 .checkbox:checked + .checkbox__visible:before {
   opacity: 1;
 }
+
+@include phones {
+  .form__row:nth-child(3) .form__block:nth-child(4) {
+    display: none;
+  }
+
+  .form__row:nth-child(3) .form__block:nth-child(3) {
+    margin-right: 0;
+  }
+}
+

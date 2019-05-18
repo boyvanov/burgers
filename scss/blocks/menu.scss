@@ -21,7 +21,7 @@
 
   @include tablets {
     top: 8%;
-   left: 3%;
+    left: 3%;
   }
 }
 
@@ -39,11 +39,11 @@
   position: relative;
 
   @include tablets {
-  width: rem(60px);
+    width: rem(60px);
   }
 
   @include phones {
-  width: rem(40px);
+    width: rem(40px);
   }
 }
 
@@ -79,7 +79,7 @@
 
   @include phones {
     font-size: rem(32px);
-    }
+  }
 }
 
 .submenu__wrap {
@@ -104,14 +104,18 @@
   }
 
   & .submenu__wrap {
-    width: rem(520px);
+      width: rem(550px);
 
     @include tablets {
-    width: rem(350px);
+      width: rem(450px);
     }
 
     @include phones {
-    width: rem(255px);
+      width: rem(355px);
+    }
+
+    @include phones-small {
+      width: rem(247px);
     }
   }
 }
