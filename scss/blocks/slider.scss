@@ -1,0 +1,81 @@
+.slider__list {
+  display: flex;
+}
+
+.slider__item {
+  display: flex;
+  position: relative;
+  padding-top: 5vw;
+  padding-bottom: 7vw;
+  justify-content: center;
+  align-items: center;
+
+  @include tablets {
+    flex-direction: column;
+    padding-top: rem(90px);
+    padding-bottom: 0;
+  }
+}
+
+.slider__left {
+  
+  @include tablets {
+    width: 100%;
+    margin-bottom: rem(30px);
+  }
+
+  @include phones {
+    width: 80%;
+  }
+}
+
+.slider__right {
+  width: 47%;
+
+  & h3.section-title {
+
+    @include tablets {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  @include tablets {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.slider__desc {
+  margin-top: rem(30px);
+  line-height: 1.71;
+}
+
+.slider__option {
+  display: flex;
+  align-items: flex-end;
+  margin-top: rem(50px);
+
+  @include tablets {
+    justify-content: center;
+  }
+
+  @include phones-small {
+    margin-top: rem(30px);
+  }
+}
+
+.slider__price {
+  display: flex;
+  align-items: flex-end;
+  color: $red;
+  margin-right: rem(30px);
+
+  @include tablets {
+    display: inline-flex;
+  }
+}
+
+.slider__price-measure {
+  font-size: rem(30px);
+}
