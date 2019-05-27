@@ -1,11 +1,15 @@
 .section-title {
   @include gagalin();
   font-size: rem(72px);
-  line-height: 1.31;
+  line-height: 0.89;
   color: $yellow;
 
   @include tablets {
-  font-size: rem(63px);
+    font-size: rem(63px);
+  }
+
+  @include phones {
+    font-size: rem(50px);
   }
 
   &--grey {

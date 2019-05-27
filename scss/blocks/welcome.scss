@@ -5,9 +5,9 @@
 
 .welcome__content {
   display: flex;
+  flex: 0.8;
   align-items: center;
   justify-content: center;
-  padding-bottom: 8%;
   margin: 0 auto;
   
   @include tablets {
@@ -60,42 +60,5 @@
   }
 }
 
-.hamburger__menu {
-  margin-left: rem(30px);
-  width: rem(24px);
-  height: rem(22px);
-  position: relative;
-  display: none;
-  cursor: pointer;
-  align-items: center;
 
-  @include tablets{
-    display: flex;
-  }
-}
-
-.hamburger__menu-dash {
-  &, &:before, &:after {
-    width: 100%;
-    height: rem(4px);
-    background-color: $white;
-    border-radius: rem(3px);
-  }
-}
-
-.hamburger__menu-dash {
-  &:before, &:after {
-    content: '';
-    position: absolute;
-    display: block;
-  }
-
-  &:before {
-    top: 0;
-  }
-
-  &:after {
-    bottom: 0;
-  }
-}
 

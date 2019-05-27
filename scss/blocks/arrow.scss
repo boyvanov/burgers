@@ -1,0 +1,71 @@
+.arrow {
+  display: block;
+
+  &--down {
+    @include centered(x);
+    bottom: rem(20px);
+  }
+
+  &--left, &--right {
+    @include centered(y);
+    z-index: 10;
+  }
+
+  &--left {
+    left: rem(-30px);
+
+    @include tablets {
+      left: rem(-40px);
+    }
+
+    @include phones {
+      left: 0;
+    }
+  }
+
+  &--right {
+    right: rem(-30px);
+
+    @include tablets {
+      right: rem(-40px);
+    }
+
+    @include phones {
+      right: 0;
+    }
+  }
+}
+
+.arrow
+
+.arrow__icon {
+  &--down {
+    width: rem(28.685px);
+    height: rem(14.479px);
+  }
+
+  &--left, &--right {
+    width: rem(28.685px);
+    height: rem(14.479px);
+  }
+
+  &--left {
+    transform: rotate(90deg);
+  }
+
+  &--right {
+    transform: rotate(-90deg);
+  }
+}
+
+.arrow_scroll {
+  border-width: 2px;
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  position: absolute;
+  left: 47px;
+  top: 1612px;
+  width: 11px;
+  height: 23px;
+  z-index: 151;
+}

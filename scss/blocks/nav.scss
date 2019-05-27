@@ -9,6 +9,7 @@
 .nav__item{
   display: flex;
   align-items: center;
+  position: relative;
 
   &:before {
     content: '';
