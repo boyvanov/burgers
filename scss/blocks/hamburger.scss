@@ -12,7 +12,7 @@
     display: flex;
   }
 }
-  
+
 .hamburger-menu-icon__dash {
 
   &,
@@ -47,17 +47,17 @@
     & {
       height: 0;
     }
-  
+
     &:before,
     &:after {
       background-color: #c1c2c2;
     }
-  
+
     &:before {
       transform-origin: 0 0;
       transform: rotate(45deg) translate(3px, -2px);
     }
-  
+
     &:after {
       transform-origin: 0 0;
       transform: rotate(-45deg);
@@ -91,6 +91,8 @@
 
   & .nav__item {
     display: block;
+    opacity: 0;
+    animation-fill-mode: forwards;
 
     &:last-child {
       margin-bottom: 0;
@@ -100,6 +102,8 @@
       margin: rem(20px) auto;
       width: rem(7px);
       height: rem(7px);
+      opacity: 0;
+      animation-fill-mode: forwards;
     }
   }
 
@@ -115,4 +119,21 @@
 
 .hamburger-menu--active {
   display: flex;
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slideInUp,
+.slideInUp:before {
+  animation: slideInUp .3s;
 }
