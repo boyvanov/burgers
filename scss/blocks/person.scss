@@ -8,6 +8,11 @@
   display: inline-flex;
   align-items: center;
 
+  @include tablets {
+    font-size: rem(25px);
+  }
+  
+
   &:before {
     content: "";
     width: rem(9px);
@@ -22,8 +27,15 @@
 .person__block {
   display: flex;
   margin-top: rem(15px);
+  margin-left: rem(19px);
   height: 0;
   overflow: hidden;
+
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
 }
 
 .person__avatar {
@@ -32,16 +44,18 @@
   border-radius: 50%;
   overflow: hidden;
   margin-right: rem(20px);
+  flex-shrink: 0;
+
+  @include tablets {
+    margin-right: 0;
+    margin-bottom: rem(20px);
+  }
 }
 
 .person__avatar-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.person__desc {
-  width: 45%;
 }
 
 .person__profession {

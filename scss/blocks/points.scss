@@ -1,14 +1,18 @@
-.slider {
+.points {
   position: fixed;
-  top: rem(96px);
-  right: rem(55px);
+  top: rem(95px);
+  right: rem(25px);
+
+  @include tablets {
+    display: none;
+  }
 }
 
-.slider__item {
+.points__item {
   margin-bottom: rem(5px);
 }
 
-.slider__link {
+.points__link {
   display: block;
   width: rem(16px);
   height: rem(16px);
@@ -40,8 +44,8 @@
   }
 }
 
-.slider__item--active {
-  .slider__link:after {
+.points__item--active {
+  .points__link:after {
     opacity: 1;
   }
 }

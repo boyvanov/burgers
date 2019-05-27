@@ -4,6 +4,10 @@
   line-height: 1.31;
   color: $yellow;
 
+  @include tablets {
+  font-size: rem(63px);
+  }
+
   &--grey {
     color: $dark-grey;
   }

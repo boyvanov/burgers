@@ -1,5 +1,6 @@
 .container {
-  width: 940px;
+  width: 95%;
+  max-width: 940px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -13,4 +14,10 @@
 
 .container--footer {
   flex-direction: row;
+  justify-content: space-between;
+
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+  }
 }

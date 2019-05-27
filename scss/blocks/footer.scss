@@ -1,12 +1,14 @@
 .footer {
   position: absolute;
   bottom: 0;
-  height: rem(60px);
+  left: 0;
+  right: 0;
+  padding: rem(12px) 0;
+  // height: rem(60px);
   width: 100%;
   @include bgcover();
   background-image: url(../img/bg/bg_footer.png);
-  display: flex;
-}
+  }
 
 .footer__left, .footer__right {
   flex: 1;
@@ -21,14 +23,17 @@
 .contacts__phone {
   font-weight: bold;
   color: $orange;
-  display: inline-flex;
+  display: flex;
   align-items: center;
 
-  &:before {
-    content: '';
-    width: rem(12px);
-    height: rem(11px);
-    background-image: url(../img/icons/phone.png);
-    margin-right: rem(5px);
-  }
+  @include phones {
+    justify-content: center;
+    margin-bottom: rem(15px);
+    }
+}
+
+.contacts__phone-icon {
+  width: rem(12px);
+  height: rem(11px);
+  margin-right: rem(5px)
 }

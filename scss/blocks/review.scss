@@ -21,14 +21,35 @@
   opacity: 0;
   transition: opacity .5s;
   background-color: rgba(#141414, .7);
+
+  @include tablets {
+    text-align: center;
+    padding: 8% 15%;
+  }
+
+  @include phones {
+    padding: 20%;
+  }
+
+  @include phones-small {
+    padding: 13%;
+  }
 }
 
 .review__title {
   @include gagalin();
+
+  @include phones {
+    font-size: rem(24px);
+  }
 }
 
 .review__text {
   line-height: 1.71;
   margin-top: rem(15px);
+
+  @include phones {
+    display: none;
+  }
 }
 

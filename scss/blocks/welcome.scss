@@ -5,18 +5,47 @@
 
 .welcome__content {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding-bottom: 8%;
+  margin: 0 auto;
+  
+  @include tablets {
+    flex-direction: column;
+    width: 62%;
+    text-align: center;
+  }
+
+  @include phones {
+    width: 80%;
+  }
+
+  @include phones-small {
+    width: 70%;
+  }
 }
 
 .welcome__content-pic {
   margin-right: rem(11px);
+
+  @include tablets {
+    margin-right: 0;
+  }
 }
 
 .welcome__content-title {
-  width: 45%;
   margin-top: rem(70px);
+  width: 45%;
+
+  @include tablets {
+    margin-top: rem(20px);
+  }
+}
+
+.welcome__content-pic, .welcome__content-title {
+  @include tablets {
+    width: 100%;
+  }
 }
 
 .welcome__desc {
@@ -25,4 +54,48 @@
   line-height: 0.92;
   letter-spacing: rem(-1.62px);
   margin-top: rem(15px);
+
+  @include phones {
+    font-size: rem(50px);
+  }
 }
+
+.hamburger__menu {
+  margin-left: rem(30px);
+  width: rem(24px);
+  height: rem(22px);
+  position: relative;
+  display: none;
+  cursor: pointer;
+  align-items: center;
+
+  @include tablets{
+    display: flex;
+  }
+}
+
+.hamburger__menu-dash {
+  &, &:before, &:after {
+    width: 100%;
+    height: rem(4px);
+    background-color: $white;
+    border-radius: rem(3px);
+  }
+}
+
+.hamburger__menu-dash {
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    display: block;
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  &:after {
+    bottom: 0;
+  }
+}
+

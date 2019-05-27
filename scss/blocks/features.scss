@@ -1,11 +1,39 @@
 .features__pic {
-  min-height: rem(90px);
   display: flex;
   justify-content: center;
 }
 
+.features__pic-icon {
+  min-height: rem(90px);
+
+  @include phones {
+    min-width: rem(100px);
+  }
+
+  &--meat {
+    width: rem(97px);
+    height: rem(89px);
+  }
+
+  &--hand {
+    width: rem(73px);
+    height: rem(85px);
+  }
+
+  &--natural {
+    width: rem(88px);
+    height: rem(75px);
+  }
+  
+}
+
 .features__desc {
   text-align: center;
+
+  @include phones {
+    text-align: left;
+    margin-left: rem(25px);
+  }
 }
 
 .features__title {
@@ -15,6 +43,10 @@
   letter-spacing: rem(-0.6px);
   line-height: 1.17;
   margin-top: rem(30px);
+
+  @include phones {
+    margin-top: 0;
+  }
 }
 
 .features__text {
