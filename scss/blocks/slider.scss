@@ -1,5 +1,11 @@
+.slider {
+  overflow: hidden;
+}
+
 .slider__list {
   display: flex;
+  position: relative;
+  transition: right .5s;
 }
 
 .slider__item {
@@ -9,6 +15,8 @@
   padding-bottom: 7vw;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
+  width: 100%;
 
   @include tablets {
     flex-direction: column;
@@ -18,6 +26,7 @@
 }
 
 .slider__left {
+  width: 50%;
   
   @include tablets {
     width: 100%;
@@ -27,10 +36,15 @@
   @include phones {
     width: 80%;
   }
+
+  @include phones-small {
+    margin-bottom: rem(10px);
+  }
 }
 
 .slider__right {
-  width: 47%;
+  width: 50%;
+  margin-left: rem(20px);
 
   & h3.section-title {
 
@@ -49,6 +63,10 @@
 .slider__desc {
   margin-top: rem(30px);
   line-height: 1.71;
+
+  @include phones-small {
+    margin-top: rem(10px);
+  }
 }
 
 .slider__option {
@@ -61,7 +79,7 @@
   }
 
   @include phones-small {
-    margin-top: rem(30px);
+    margin-top: rem(20px);
   }
 }
 

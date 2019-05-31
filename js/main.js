@@ -173,3 +173,42 @@ let submenuAcco = () => {
 }
 
 submenuAcco();
+
+let slide = (function () {
+  const left = document.querySelector('.arrow--left');
+  const right = document.querySelector('.arrow--right');
+  const slider = document.querySelector('.slider__list');
+  let sliderWidth = parseInt(getComputedStyle(slider).width);
+
+  window.addEventListener('resize', function () {
+    currentRight = 0;
+    slider.style.right = currentRight;
+    sliderWidth = parseInt(getComputedStyle(slider).width);
+  })
+
+  let sliderItemsCounter = slider.children.length;
+
+  let moveSlide = function (direction) {
+    direction.addEventListener('click', (e) => {
+      e.preventDefault();
+      let currentRight = parseInt(getComputedStyle(slider).right);
+
+      if (currentRight < (sliderItemsCounter - 1) * sliderWidth && direction == right) {
+        slider.style.right = currentRight + sliderWidth + 'px';
+      }
+
+      if (currentRight > 0 && direction == left) {
+        slider.style.right = currentRight - sliderWidth + 'px';
+      }
+    });
+  }
+
+  let addListeners = function () {
+    moveSlide(right);
+    moveSlide(left);
+  }
+
+  return { init: addListeners }
+})();
+
+slide.init();
