@@ -1,17 +1,13 @@
 .person__link {
-  display: inline-block;
-  color: $white;
-}
-
-.person__name {
-  @include gagalin();
   display: inline-flex;
   align-items: center;
-
+  color: $white;
+  @include gagalin();
+  
   @include tablets {
     font-size: rem(25px);
+    white-space: nowrap;
   }
-  
 
   &:before {
     content: "";
@@ -21,6 +17,8 @@
     border-left: rem(7px) solid transparent;
     border-right: rem(7px) solid transparent;
     margin-right: rem(10px);
+    transition: transform .5s;
+
   }
 }
 
@@ -28,8 +26,11 @@
   display: flex;
   margin-top: rem(15px);
   margin-left: rem(19px);
+  // max-height: 0;
   height: 0;
   overflow: hidden;
+  // transition: max-height .5s;
+  transition: height .5s;
 
   @include tablets {
     flex-direction: column;
@@ -61,5 +62,19 @@
 .person__profession {
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+.person--active {
+  // & .person__block {
+  //   max-height: 100vh;
+  // }
+
+  & .person__link {
+    color: $yellow;
+
+    &:before {
+      transform: rotate(-180deg);
+    }
+  }
 }
 

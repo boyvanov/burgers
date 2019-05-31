@@ -8,9 +8,13 @@
   
 
   @include tablets {
-    padding: 0;
     text-align: center;
   }
+
+  @include phones {
+    padding: 8%;
+  }
+
 }
 
 .team__content {
@@ -25,7 +29,7 @@
     left: 0;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: flex-start;
   }
 }
 
@@ -48,18 +52,5 @@
   }
 }
 
-.team__accordeon-item--active {
-  & .person__block {
-    height: 100%;
-  }
 
-  & .person__name {
-    color: $yellow;
-
-    &:before {
-      border-bottom: rem(7px) solid $yellow;
-      border-top: none;
-    }
-  }
-}
 
