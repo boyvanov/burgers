@@ -76,6 +76,7 @@ menu.openMenu();
 //   let teamList = document.querySelector('.team__accordeon');
 
 //   teamList.addEventListener('click', function (e) {
+
 //     e.preventDefault();
 //     let target = e.target;
 //     console.log(target);
@@ -101,8 +102,8 @@ menu.openMenu();
 let teamAcco = function () {
   let teamLink = document.querySelectorAll('.person__link');
 
-  teamLink.forEach(element => {
-    element.addEventListener('click', (e) => {
+  teamLink.forEach(function (element) {
+    element.addEventListener('click', function (e) {
       e.preventDefault(e);
       let activePerson = document.querySelector('.person--active');
 
@@ -113,6 +114,7 @@ let teamAcco = function () {
       }
 
       if (!activePerson || e.target !== activePerson.querySelector('.person__link')) {
+        // let currentPerson = e.target.parentNode;
         let currentPerson = e.target.closest('.person');
         currentPerson.classList.add('person--active');
 
@@ -125,3 +127,49 @@ let teamAcco = function () {
 
 teamAcco();
 
+let submenuAcco = () => {
+  let submenuLink = document.querySelectorAll('.submenu__link');
+
+  submenuLink.forEach(submenuItem => {
+    submenuItem.addEventListener('click', (e) => {
+      e.preventDefault(e);
+
+      let activeSubmenu = document.querySelector('.submenu--active');
+
+      if (activeSubmenu) {
+        let submenuBlock = activeSubmenu.querySelector('.submenu__block');
+        submenuBlock.style.width = '0px';
+        activeSubmenu.classList.remove('submenu--active');
+      }
+
+      if (!activeSubmenu || e.target !== activeSubmenu.querySelector('.submenu__link')) {
+        // let currentSubmenu = e.target.parentNode;
+        let currentSubmenu = e.target.closest('.submenu');
+        currentSubmenu.classList.add('submenu--active');
+
+        let currentSubmenuBlock = currentSubmenu.querySelector('.submenu__block');
+        currentSubmenuBlock.style.width = calculateWidth() + 'px';
+      }
+    })
+  });
+
+  let calculateWidth = () => {
+
+    let windowWidth = window.innerWidth;
+
+    let links = document.querySelectorAll('.submenu__link');
+    let linksWidth = parseFloat(getComputedStyle(links[0]).width);
+
+    let width = windowWidth - linksWidth * links.length;
+
+    if (width > 550) {
+      return 550;
+    } else {
+      return width;
+    }
+
+    // return (width > 550) ? 550 : width;
+  }
+}
+
+submenuAcco();
