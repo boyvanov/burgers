@@ -689,7 +689,7 @@
       <ul class="menu__accordeon">
         <li class="menu__accordeon-item submenu">
           <a href="#" class="submenu__link submenu__link--meat">
-            <h3 class="section-title section-title--white submenu__title">Для мясоедов</h3>
+            <div class="section-title section-title--white submenu__title">Для мясоедов</div>
           </a>
           <div class="submenu__block">
             <div class="submenu__desc">
@@ -706,7 +706,7 @@
         </li>
         <li class="menu__accordeon-item submenu">
           <a href="#" class="submenu__link submenu__link--veg">
-            <h3 class="section-title section-title--white submenu__title">Вегетарианское</h3>
+            <div class="section-title section-title--white submenu__title">Вегетарианское</div>
           </a>
           <div class="submenu__block">
             <div class="submenu__desc">
@@ -723,7 +723,7 @@
         </li>
         <li class="menu__accordeon-item submenu">
           <a href="#" class="submenu__link submenu__link--diet">
-            <h3 class="section-title section-title--white submenu__title">Диетическое</h3>
+            <div class="section-title section-title--white submenu__title">Диетическое</div>
           </a>
           <div class="submenu__block">
             <div class="submenu__desc">
@@ -860,7 +860,7 @@
       <div class="container">
         <h2 class="section-title section-title--centered">Закажите доставку</h2>
         <div class="form__wrap">
-          <form action="" class="form">
+          <form action="" class="form" id="form">
             <div class="form__col">
               <div class="form__row">
                 <label class="form__block">
@@ -1052,7 +1052,20 @@
         </ul>
       </nav>
     </div>
+    <div class="modal-review" id="modal-review">
+      <div class="modal-review__inner"></div>
+    </div>
   </div>
+  <script type="template" id="overlay1">
+    <div class="modal-review__title">Константин Спилберг</div>
+    <div class="modal-review__content">Мысли все о них и о них, о них и о них.
+      Нельзя устоять, невозможно забыть... Никогда не думал, что булочки
+      могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
+      Мысли все о них и о них, о них и о них.
+      Нельзя устоять, невозможно забыть... Никогда не думал, что булочки
+      могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
+    </div>
+  </script>
   <script src="./js/main.js"></script>
 </body>
 
