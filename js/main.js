@@ -73,7 +73,7 @@ let menu = (function (options) {
 
 menu.openMenu();
 
-///////////////Вертикальный аккордеон/////////////////////////
+/////////////Вертикальный аккордеон/////////////////////////
 
 // let teamAcco = function () {
 //   let teamList = document.querySelector('.team__accordeon');
@@ -145,21 +145,21 @@ let submenuAcco = () => {
         submenuBlock.style.width = '0px';
         activeSubmenu.classList.remove('submenu--active');
       }
-      
-      if (!activeSubmenu || e.target !== activeSubmenu.querySelector('.submenu__link')) {
-        // let currentSubmenu = e.target.parentNode;
-        let currentSubmenu = e.target.closest('.submenu');
+
+      if (!activeSubmenu || e.currentTarget !== activeSubmenu.querySelector('.submenu__link')) {
+        // let currentSubmenu = e.currentTarget.parentNode;
+        let currentSubmenu = e.currentTarget.closest('.submenu');
         currentSubmenu.classList.add('submenu--active');
 
         let currentSubmenuBlock = currentSubmenu.querySelector('.submenu__block');
         currentSubmenuBlock.style.width = calculateWidth() + 'px';
       }
 
-      if (activeSubmenu && e.target == activeSubmenu.querySelector('.submenu__title')) {
-        let submenuBlock = activeSubmenu.querySelector('.submenu__block');
-        submenuBlock.style.width = '0px';
-        activeSubmenu.classList.remove('submenu--active');
-      }
+      // if (activeSubmenu && e.target == activeSubmenu.querySelector('.submenu__title')) {
+      //   let submenuBlock = activeSubmenu.querySelector('.submenu__block');
+      //   submenuBlock.style.width = '0px';
+      //   activeSubmenu.classList.remove('submenu--active');
+      // }
     })
   });
 
@@ -197,7 +197,7 @@ let slide = (function () {
     direction.addEventListener('click', (e) => {
       e.preventDefault();
       let currentRight = parseInt(getComputedStyle(slider).right);
-
+            
       if (currentRight < (sliderItemsCounter - 1) * sliderWidth && direction == right) {
         slider.style.right = currentRight + sliderWidth + 'px';
       }
@@ -237,23 +237,47 @@ slide.init();
 const overlay = (function () {
   let body = document.querySelector('body');
   let link = document.createElement('a');
+  let button = document.createElement('button');
 
   link.classList.add('modal-review__close');
   link.setAttribute('href', '#');
 
+  button.classList.add('btn', 'btn--modal');
+  button.setAttribute('type', 'button');
+
+  let closeOverlay = function (modalId) {
+    let overlay = document.querySelector(modalId);
+
+    overlay.classList.remove('modal--active');
+    body.classList.remove('locked');
+  }
+
   let openOverlay = function (modalId, content) {
     let overlay = document.querySelector(modalId);
-    let innerOverlay = document.querySelector('.modal-review__inner');
+    let innerOverlay = overlay.querySelector('.modal__inner');
 
     if (content) {
       innerOverlay.innerHTML = content;
     }
-    innerOverlay.appendChild(link);
 
-    overlay.classList.add('modal-review--active');
+    if (modalId === '#modal-review') {
+      innerOverlay.appendChild(link);
+    }
+
+    if (modalId === '#modal-form') {
+      innerOverlay.appendChild(button);
+      button.textContent = 'закрыть';
+    }
+
+    overlay.classList.add('modal--active');
     body.classList.add('locked');
 
     link.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeOverlay(modalId);
+    })
+
+    button.addEventListener('click', (e) => {
       e.preventDefault();
       closeOverlay(modalId);
     })
@@ -272,12 +296,42 @@ const overlay = (function () {
     });
   }
 
-  let closeOverlay = function (modalId) {
-    let overlay = document.querySelector(modalId);
+  // let openOverlay = function (modalId, content) {
+  //   let overlay = document.querySelector(modalId);
+  //   let contentOverlay = overlay.querySelector('.modal__content');
+  //   let link = document.querySelector('.modal-review__close');
+  //   let button = document.querySelector('.btn--modal');
 
-    overlay.classList.remove('modal-review--active');
-    body.classList.remove('locked');
-  }
+  //   if (content) {
+  //     contentOverlay.innerHTML = content;
+  //   }
+
+  //   overlay.classList.add('modal--active');
+  //   body.classList.add('locked');
+
+  //   link.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     closeOverlay(modalId);
+  //   })
+
+  //   button.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     closeOverlay(modalId);
+  //   })
+
+  //   overlay.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     if (e.target === overlay) {
+  //       closeOverlay(modalId);
+  //     }
+  //   })
+
+  //   document.addEventListener('keydown', function (e) {
+  //     if (e.keyCode == 27) {
+  //       closeOverlay(modalId);
+  //     }
+  //   });
+  // }
 
   // let setContent = function (modalId, content) {
   //   let overlay = document.querySelector(modalId);
@@ -298,7 +352,7 @@ const overlay = (function () {
 
 /////////////////////Отправляет запрос на сервер////////////////
 
-var ajaxForm = function (form) {
+let ajaxForm = function (form) {
   let formData = new FormData();
   formData.append('name', form.elements.name.value);
   formData.append('phone', form.elements.phone.value);
@@ -326,24 +380,32 @@ var ajaxForm = function (form) {
 
 //////////////////////Обрабатывает ответ с сервера/////////////////
 
-var submitForm = function (e) {
+let submitForm = function (e) {
   e.preventDefault();
-  var form = e.target;
+  let form = e.target;
   let request = ajaxForm(form)
 
   request.addEventListener('load', () => {
     if (request.status >= 400) {
-      // let content = 'Ошибка соединения с сервером, попробуйте позже';
+      // let contentModalForm = 'Ошибка соединения с сервером, попробуйте позже';
+      // overlay.open('#modal-form', `${contentModalForm}. Ошибка ${request.status}`)
+      if (form.elements.comment.value === "") {
+        let contentModalForm = request.response.errors.comment;
+        overlay.open('#modal-form', contentModalForm);
+      }
 
-      // overlay.open('#modal-review', `${content}. Ошибка ${request.status}`)
-      let contentModalForm = request.response.errors.name;
+      if (form.elements.phone.value === "") {
+        let contentModalForm = request.response.errors.phone;
+        overlay.open('#modal-form', contentModalForm);
+      }
 
-      overlay.open('#modal-review', contentModalForm);
-
+      if (form.elements.name.value === "") {
+        let contentModalForm = request.response.errors.name;
+        overlay.open('#modal-form', contentModalForm);
+      }
     } else {
       let contentModalForm = request.response.message;
-
-      overlay.open('#modal-review', contentModalForm);
+      overlay.open('#modal-form', contentModalForm);
     }
   });
 }
@@ -353,15 +415,14 @@ myForm.addEventListener('submit', submitForm);
 
 ///////////////////Открытие отзыва//////////////////////
 
-let reviewOpen = function (content) {
+let reviewOpen = function (template) {
   let commentsList = document.querySelector('.comments__list');
 
   commentsList.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(e.target);
 
     if (e.target.classList.contains('btn--review')) {
-      overlay.open('#modal-review', content);
+      overlay.open('#modal-review', template);
     }
   });
 }
