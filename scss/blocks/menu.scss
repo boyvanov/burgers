@@ -82,8 +82,9 @@
   }
 }
 
-.submenu__wrap {
+.submenu__block {
   width: 0;
+  transition: width .3s;
 }
 
 .submenu__desc {
@@ -92,33 +93,22 @@
   height: 100%;
   overflow: hidden;
   padding: 7% 6%;
-
+  color:rgba(255,255,255, 0);
+  transition: color .3s;
+  
   @include phones {
     font-size: rem(12px);
   }
 }
 
-.menu__accordeon-item--active {
+.submenu--active {
   & .submenu__title {
     color: $yellow;
   }
 
-  & .submenu__wrap {
-      width: rem(550px);
-
-    @include tablets {
-      width: rem(450px);
-    }
-
-    @include phones {
-      width: rem(355px);
-    }
-
-    @include phones-small {
-      width: rem(247px);
+  & .submenu__desc {
+    color:rgba(255,255,255, 1);
     }
   }
-}
-
 
 

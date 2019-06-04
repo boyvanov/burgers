@@ -1,0 +1,77 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(#2f3234, .92);
+}
+
+.modal__inner {
+  position: absolute;
+  color: $dark-grey;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: $white;
+  border-radius: 5px;
+
+  &--review {
+    width: rem(450px);
+    padding: rem(30px) rem(20px);
+
+
+    @include tablets {
+      width: 58%;
+    }
+  
+    @include phones {
+      width: 96%;
+    }
+  }
+
+  &--form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: rem(230px);
+    padding: rem(20px);
+
+
+    @include tablets {
+      width: 30%;
+    }
+  
+    @include phones {
+      width: 50%;
+    }
+
+    @include phones-small {
+      width: 63%;
+    }
+  }
+}
+
+.modal--active {
+  display: flex;
+}
+
+.modal-review__close {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 10%;
+  right: 5%;
+  background-image: url('../img/svg/close.svg');
+  @include bgcover;
+}
+
+.modal-review__title {
+  @include gagalin();
+} 
+
+.modal-review__content {
+  line-height: 1.71;
+  margin-top: rem(20px);
+}
