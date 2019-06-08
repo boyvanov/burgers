@@ -1,7 +1,11 @@
-.logo--active {
-  z-index: 30;
-  position: fixed;
-  top: rem(13px);
+.logo {
+  display: block;
+
+  &--active {
+    z-index: 30;
+    position: fixed;
+    top: rem(13px);
+  }
 }
 
 .logo__icon {
