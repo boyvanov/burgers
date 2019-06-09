@@ -312,6 +312,69 @@ $(function () {
 
 let IngredientsHover = (function () {
   
+  // let ingredients = document.querySelector('.ingredients');
+  // let ingredientsCross = document.querySelector('.ingredients__cross-link');
+  // let body = document.querySelector('body');
+
+
+// body.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   console.log(e.target);
+
+  //   if (e.target === ingredients) {
+  //     // console.log(e.target);
+  //     ingredients.classList.add('active');
+  //   } else {
+  //     ingredients.classList.remove('active');
+  //   }
+  // })
+
+  // body.addEventListener('click', (e) => {
+  //   e.preventDefault();
+
+  //   if (e.target !== ingredients) {
+  //     ingredients.classList.remove('active');
+  //   }
+  // })
+
+  // ingredients.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   ingredients.classList.toggle('active');
+  // })
+
+  // ingredients.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   // console.log(e.target);
+
+  //   if (e.target === ingredientsCross) {
+  //     // console.log(e.target);
+  //     ingredients.classList.remove('active');
+  //   } 
+  // })
+
+  // $('.ingredients').on('click', function (e) {
+  //   e.preventDefault();
+  //   console.log($(this));
+  //   // console.log(e.target);
+
+  //   $(this).addClass('active');
+  // })
+
+  // $('body').on('click', '.ingredients', function(e) {
+  //   e.preventDefault();
+  //   console.log(e.currentTarget);
+
+  //   if (e.currentTarget !== $('.ingredients')) {
+  //     $('.ingredients').removeClass('active');
+  //   }
+
+  // })
+
+  // document.addEventListener('keydown', function (e) {
+  //   if (e.keyCode === 27) {
+  //     $('.ingredients').removeClass('active');
+  //   }
+  // })
 
   $('.ingredients').on({
     mouseenter() {
@@ -834,7 +897,7 @@ function init() {
     },
       {
         iconLayout: 'default#image',
-        iconImageHref: '/img/svg/map-marker.svg',
+        iconImageHref: './img/svg/map-marker.svg',
         iconImageSize: [46, 58],
         iconImageOffset: [-23, -58]
         // iconImageClipRect: [[415,0], [461,57]]
@@ -844,7 +907,7 @@ function init() {
   let clusterer = new ymaps.Clusterer({
     clusterIcons: [
       {
-        href: '/img/svg/logo.svg',
+        href: './img/svg/logo.svg',
         size: [98, 74],
         offset: [-49, -37]
       }

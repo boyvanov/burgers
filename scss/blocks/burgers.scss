@@ -36,6 +36,10 @@
         left: 100%;
         top: 0;
       }
+
+      & .ingredients__cross-link {
+        display: flex;
+      }
     }
   }
 }
@@ -124,6 +128,8 @@
   width: 100%;
   padding: 6% 8%;
   position: relative;
+  padding-right: 20%;
+
 
   @include tablets {
     padding-right: 25%;
@@ -137,7 +143,6 @@
   width: 20px;
   height: 20px;
   z-index: 5;
-
 }
 
 .ingredients__cross-link {
@@ -145,10 +150,6 @@
   flex-direction: column;
   justify-content: space-between;
   display: none;
-
-  @include tablets {
-    display: flex;
-  }
 
   &:before {
     content: '';

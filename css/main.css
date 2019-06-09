@@ -289,10 +289,12 @@ a {
 .slideInUp:before {
   animation: slideInUp .3s; }
 
-.logo--active {
-  z-index: 30;
-  position: fixed;
-  top: 0.8125rem; }
+.logo {
+  display: block; }
+  .logo--active {
+    z-index: 30;
+    position: fixed;
+    top: 0.8125rem; }
 
 .logo__icon {
   width: 5.75rem;
@@ -600,6 +602,8 @@ a {
     .ingredients.active .ingredients__dropdown.active {
       left: 100%;
       top: 0; }
+    .ingredients.active .ingredients__dropdown .ingredients__cross-link {
+      display: flex; }
 
 .ingredients__icon--burger {
   width: 2.875rem;
@@ -667,7 +671,8 @@ a {
   flex-direction: column;
   width: 100%;
   padding: 6% 8%;
-  position: relative; }
+  position: relative;
+  padding-right: 20%; }
   @media screen and (max-width: 768px) {
     .ingredients__list {
       padding-right: 25%; } }
@@ -685,9 +690,6 @@ a {
   flex-direction: column;
   justify-content: space-between;
   display: none; }
-  @media screen and (max-width: 768px) {
-    .ingredients__cross-link {
-      display: flex; } }
   .ingredients__cross-link:before {
     content: '';
     display: block;
