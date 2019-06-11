@@ -378,17 +378,17 @@ let IngredientsHover = (function () {
 
   $('.ingredients').on({
     mouseenter() {
-      $(this).addClass('active');
+      $(this).addClass('ingredients--active');
     },
     mouseleave() {
-      $(this).removeClass('active');
+      $(this).removeClass('ingredients--active');
     }
   })
 
   $('.ingredients__cross-link').on('click', function (e) {
     e.preventDefault();
     // console.log($(this));
-    $(this).closest('.ingredients').removeClass('active');
+    $(this).closest('.ingredients').removeClass('ingredients--active');
   })
 
   // $('.ingredients').mouseenter(function () {

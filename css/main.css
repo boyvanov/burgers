@@ -597,13 +597,14 @@ a {
   @media screen and (max-width: 480px) {
     .ingredients {
       left: 0; } }
-  .ingredients.active {
-    background-color: #e35028; }
-    .ingredients.active .ingredients__dropdown.active {
-      left: 100%;
-      top: 0; }
-    .ingredients.active .ingredients__dropdown .ingredients__cross-link {
-      display: flex; }
+
+.ingredients--active {
+  background-color: #e35028; }
+  .ingredients--active .ingredients__dropdown {
+    display: flex;
+    left: 100%; }
+  .ingredients--active .ingredients__cross-link {
+    display: flex; }
 
 .ingredients__icon--burger {
   width: 2.875rem;
@@ -651,8 +652,9 @@ a {
   margin-top: 0.1875rem; }
 
 .ingredients__dropdown {
-  display: flex;
+  display: none;
   position: absolute;
+  top: 0;
   left: -9999px;
   width: 16.875rem;
   height: 20.625rem;
