@@ -35,7 +35,7 @@
   }
 
   &--video {
-    width: 60%;
+    width: rem(660px);
 
     @include tablets {
       width: 95%;
