@@ -889,11 +889,11 @@
                   <div class="form__row">
                     <label class="form__block">
                       <div class="form__block-title">Имя</div>
-                      <input type="text" name="name" class="form__input form-field">
+                      <input type="text" name="name" class="form__input form-field" required>
                     </label>
                     <label class="form__block">
                       <div class="form__block-title">Телефон</div>
-                      <input type="text" name="phone" class="form__input form-field">
+                      <input type="text" name="phone" class="form__input form-field" required>
                     </label>
                   </div>
                   <div class="form__row">
@@ -925,7 +925,7 @@
                   <div class="form__row">
                     <label class="form__block">
                         <div class="form__block-title">Комментарий</div>
-                        <textarea name="comment" class="form__textarea form-field"></textarea>
+                        <textarea name="comment" class="form__textarea form-field" required></textarea>
                     </label>
                   </div>
                   <div class="form__buttons">
@@ -1052,6 +1052,9 @@
       <div class="hamburger-menu-icon__dash"></div>
     </a>
     <div class="hamburger-menu" id="hamburger-menu">
+      <a href="#" class="hamburger-menu__logo" >
+          <img src="./img/svg/logo.svg" alt="logo" class="logo__icon" data-scroll-to="0">
+      </a>
       <nav class="nav">
         <ul class="nav__list" id="nav__list">
           <li class="nav__item">

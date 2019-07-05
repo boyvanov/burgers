@@ -29,7 +29,6 @@ let menu = (function (options) {
     button.classList.toggle('hamburger-menu-icon--active');
     menu.classList.toggle('hamburger-menu--active');
     body.classList.toggle('locked');
-    logo.classList.toggle('logo--active');
 
     startMenuAnimation();
 
@@ -46,6 +45,12 @@ let menu = (function (options) {
 
     menu.addEventListener('click', function (e) {
       if (e.target.classList.contains('nav__link')) {
+        _toggleMenu(e);
+      }
+    });
+
+    logo.addEventListener('click', function (e) {
+      if (e.target.classList.contains('logo__icon')) {
         _toggleMenu(e);
       }
     });
@@ -68,7 +73,7 @@ let menu = (function (options) {
 })({
   button: '#hamburger-menu-icon',
   menu: '#hamburger-menu',
-  logo: '.logo'
+  logo: '.hamburger-menu__logo'
 });
 
 menu.openMenu();
@@ -431,7 +436,7 @@ let onePageScroll = (function () {
         inscroll = false;
 
         // $('.points__item').eq(sectionEq).addClass('active').siblings().removeClass('active');
-      }, 500);
+      }, 750);
     };
   }
 
@@ -656,23 +661,23 @@ let submitForm = function (e) {
 
   request.addEventListener('load', () => {
     if (request.status >= 400) {
-      //   let contentModalForm = 'Ошибка соединения с сервером, попробуйте позже';
-      //   overlay.open('#modal-form', `${contentModalForm}. Ошибка ${request.status}`)
+        let contentModalForm = 'Ошибка соединения с сервером, попробуйте позже';
+        overlay.open('#modal-form', `${contentModalForm}. Ошибка ${request.status}`)
+      
+      // if (form.elements.comment.value === "") {
+      //   let contentModalForm = request.response.errors.comment;
+      //   overlay.open('#modal-form', contentModalForm);
       // }
-      if (form.elements.comment.value === "") {
-        let contentModalForm = request.response.errors.comment;
-        overlay.open('#modal-form', contentModalForm);
-      }
 
-      if (form.elements.phone.value === "") {
-        let contentModalForm = request.response.errors.phone;
-        overlay.open('#modal-form', contentModalForm);
-      }
+      // if (form.elements.phone.value === "") {
+      //   let contentModalForm = request.response.errors.phone;
+      //   overlay.open('#modal-form', contentModalForm);
+      // }
 
-      if (form.elements.name.value === "") {
-        let contentModalForm = request.response.errors.name;
-        overlay.open('#modal-form', contentModalForm);
-      }
+      // if (form.elements.name.value === "") {
+      //   let contentModalForm = request.response.errors.name;
+      //   overlay.open('#modal-form', contentModalForm);
+      // }
     } else {
       let contentModalForm = request.response.message;
       overlay.open('#modal-form', contentModalForm);
@@ -918,5 +923,10 @@ function init() {
   map.geoObjects.add(clusterer);
   clusterer.add(geoObjects)
   // map.geoObjects.add(placemark);
-
 }
+
+///////////////////////Валидация формы////////////////////
+
+let validate = function () {
+
+};
