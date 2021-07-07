@@ -1,10 +1,22 @@
-.logo--active {
-  z-index: 30;
-  position: fixed;
-  top: rem(13px);
+.logo {
+  display: block;
+
+  &--active {
+    z-index: 30;
+    position: fixed;
+    top: rem(13px);
+  }
 }
 
 .logo__icon {
   width: rem(92px);
   height: rem(69px);
+}
+
+.hamburger-menu__logo {
+  display: block;
+  z-index: 30;
+  position: fixed;
+  top: rem(13px);
+  left: rem(19px);
 }

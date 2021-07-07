@@ -10,7 +10,7 @@
 .ingredients {
   top: 0;
   left: 0;
-
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,13 +28,32 @@
     left: 0;
   }
 
-  &:hover {
-    background-color: $red;
+  // &.active {
+  //   background-color: $red;
 
-    & .ingredients__dropdown--active {
-      left: 100%;
-      top: 0;
-    }
+  //   & .ingredients__dropdown {
+  //     & {
+  //       display: flex;
+  //       left: 100%;
+  //     }
+
+  //     & .ingredients__cross-link {
+  //       display: flex;
+  //     }
+  //   }
+  // }
+}
+
+.ingredients--active {
+  background-color: $red;
+
+  & .ingredients__dropdown {
+    display: flex;
+    left: 100%;
+  }
+
+  & .ingredients__cross-link {
+    display: flex;
   }
 }
 
@@ -89,15 +108,15 @@
 }
 
 .ingredients__dropdown {
-  display: flex;
+  display: none;
   position: absolute;
+  top: 0;
   left: -9999px;
   width: rem(270px);
   height: rem(330px);
   background-color: rgba($white, .9);
   border-radius: 5px;
   z-index: 1;
-
 
   @include tablets {
     width: rem(320px);
@@ -114,6 +133,8 @@
   width: 100%;
   padding: 6% 8%;
   position: relative;
+  padding-right: 20%;
+
 
   @include tablets {
     padding-right: 25%;
@@ -127,7 +148,6 @@
   width: 20px;
   height: 20px;
   z-index: 5;
-
 }
 
 .ingredients__cross-link {
@@ -135,10 +155,6 @@
   flex-direction: column;
   justify-content: space-between;
   display: none;
-
-  @include tablets {
-    display: flex;
-  }
 
   &:before {
     content: '';

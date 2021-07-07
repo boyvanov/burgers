@@ -2,6 +2,7 @@
   position: fixed;
   top: rem(95px);
   right: rem(25px);
+  z-index: 100;
 
   @include tablets {
     display: none;
@@ -10,6 +11,12 @@
 
 .points__item {
   margin-bottom: rem(5px);
+
+  &.active {
+    .points__link:after {
+      opacity: 1;
+    }
+  }
 }
 
 .points__link {
@@ -44,9 +51,5 @@
   }
 }
 
-.points__item--active {
-  .points__link:after {
-    opacity: 1;
-  }
-}
+
 

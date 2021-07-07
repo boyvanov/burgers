@@ -6,31 +6,39 @@
   flex-direction: column;
   height: 100%;
   justify-content: center;
-}
 
-.container--welcome {
-  justify-content: flex-start;
-  position: relative;
-}
-
-.container--footer {
-  flex-direction: row;
-  justify-content: space-between;
-
-  @include phones {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.container--burgers {
-  position: relative;
-
-  @include tablets {
-    width: 70%;
+  &--welcome {
+    justify-content: flex-start;
+    position: relative;
   }
 
-  @include phones {
-    width: 95%;
+  &--footer {
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include phones {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &--burgers {
+    position: relative;
+
+    @include tablets {
+      width: 70%;
+    }
+
+    @include phones {
+      width: 95%;
+    }
+  }
+
+  &--video {
+    width: rem(660px);
+
+    @include tablets {
+      width: 95%;
+    }
   }
 }
